@@ -5,7 +5,7 @@
 # start plnmonitor database
 docker-compose up --force-recreate  --build -d  plnmonitordb 
 
-until docker exec plnmonitor-grafana_plnmonitordb_1  pg_isready -U plnmonitor; do
+until docker exec lockss-dashboard_plnmonitordb_1  pg_isready -U plnmonitor; do
   echo >&2 " Please wait for database to start... (this can take up to one minute)"
   sleep 10
 done
